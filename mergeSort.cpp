@@ -54,7 +54,7 @@ void merge(vector<int> &v, int start, int mid, int end)
     }
 }
 
-void merge_Sort(vector<int> &v, int start, int end)
+void merge_Sort(vector<int> &v, int start, int end)  //recursively call this mergesort procedure until you get start == end
 {
     if(start < end)
     {
