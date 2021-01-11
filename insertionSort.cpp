@@ -14,7 +14,7 @@ void insertion_Sort(vector<int> &v)
     int j, curr, pos;
     for(j = 1; j < v.size(); j++)   //starts from 1 because 1st element is always sorted
     {
-       pos = j - 1;
+       pos = j - 1;  //pointer to the previous element than current
        curr = v[j]; 
        if(v[j - 1] < curr)continue;  //if the current element is greater than the previos than it is in correct position already
        else //otherwise previous element is greater than current
