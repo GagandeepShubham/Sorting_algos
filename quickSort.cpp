@@ -12,19 +12,20 @@ using namespace std;
 int partition(vector<int> &v, int low, int high)
 {
     int pivot = v[high]; //selecting last element as pivot
-    int i = low - 1;  //index of smaller element
+    int i = low - 1;  //index of smaller element (assume)
     int j;
     for(j = low; j <= high - 1; j++)
     {
         if(v[j] <= pivot) //if any elment is smaller than pivot
         {
-            i++;  //increment the index of the smaller element 
+            i++;  //increment the index of the smaller element (because we thought that i pointed to the smaller element than pivot but we got v[j] instead 
+                  //which is smaller than pivot.
             swap(v[i], v[j]); //swap that element with the current element
         }
         //the above if block will not be executed incase the element is greater than pivot
         //so the smaller element index stays at correct position and when the above if block
-        //gets executed than we swap that max element now pointed by the i, with the minimum element
-        //pointed by j
+        //gets executed we first increment i, then we swap that max element now pointed by the i, with the smaller element
+        //pointed by j.
     }
     
     swap(v[i + 1], v[high]); //later put the pivot at the correct position
